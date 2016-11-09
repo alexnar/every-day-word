@@ -1,9 +1,9 @@
 from django.conf.urls import url
 from . import views
-from dict.views import DictionaryView
+from dict.views import DictionaryView, CreateWordView
 
 urlpatterns = [
     url(r'^$',views.index, name='index'),
-    url(r'new_word',views.new_word, name='new_word'),
+    url(r'new_word',CreateWordView.as_view(), name='new_word'),
     url(r'dictionary', DictionaryView.as_view(), name='dict_view'),
 ]

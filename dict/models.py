@@ -11,6 +11,16 @@ class Dictionary(models.Model):
         return self.word
 
 
+class NewWord(models.Model):
+    word = models.CharField(max_length=75)
+    definition = models.CharField(max_length=512)
+    author = models.CharField(max_length=128, default="")
+    rating = models.SmallIntegerField(default=0)
+
+    def __str__(self):
+        return self.word
+
+
 class UseExample(models.Model):
     word = models.ForeignKey(Dictionary, null=True)
     use_example = models.CharField(max_length=1024)
