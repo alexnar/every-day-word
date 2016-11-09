@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+    Словарь
+    {% for word in dictionary %}
+        <p>{{ word.word }} - {{ word.definition }}</p>
+    {% endfor %}
+{% endblock %}

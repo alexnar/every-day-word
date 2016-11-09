@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    {{ today_word.word }} - {{ today_word.definition }}
+    <p>Примеры использования:</p>
+    {% for usage in today_word_usage %}
+        <p>{{ usage.use_example }}</p>
+        {% empty %}
+            <p>Нет примеров использования</p>
+    {% endfor %}
+{% endblock %}
