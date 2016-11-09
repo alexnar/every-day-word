@@ -1,0 +1,3 @@
+/db.sqlite3
+/dict/management/commands/parse_words
+/.idea
