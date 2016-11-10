@@ -14,7 +14,11 @@ class NewWordAdmin(admin.ModelAdmin):
     actions = [approve_words]
 
 
+class DictionaryAdmin(admin.ModelAdmin):
+    list_display = ['word', 'definition', 'author']
+
+
 admin.site.register(NewWord, NewWordAdmin)
-admin.site.register(Dictionary)
+admin.site.register(Dictionary, DictionaryAdmin)
 admin.site.register(TodayWord)
 admin.site.register(UseExample)
