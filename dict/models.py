@@ -1,10 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Dictionary(models.Model):
     word = models.CharField(max_length=75)
     definition = models.CharField(max_length=512)
-    author = models.CharField(max_length=128, default="everydayword.ru")
+    author = models.ForeignKey(User)
     rating = models.SmallIntegerField(default=0)
 
     def __str__(self):
@@ -14,7 +15,7 @@ class Dictionary(models.Model):
 class NewWord(models.Model):
     word = models.CharField(max_length=75)
     definition = models.CharField(max_length=512)
-    author = models.CharField(max_length=128, default="")
+    author = models.ForeignKey(User)
     rating = models.SmallIntegerField(default=0)
 
     def __str__(self):
