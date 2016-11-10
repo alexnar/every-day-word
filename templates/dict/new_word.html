@@ -1,10 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-    {{ action }}
-    Добавить новое слово:
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Добавить">
-    </form>
+    {% if user.is_authenticated %}
+        Добавить новое слово:
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Добавить">
+        </form>
+    {% else %}
+        Чтобы добавить новое слово, вам нужно
+        <a href="/accounts/login/">войти</a>
+        или
+        <a href="/accounts/register">зарегестрироваться</a>.
+    {% endif %}
+
 {% endblock %}
