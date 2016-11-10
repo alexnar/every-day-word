@@ -31,6 +31,11 @@ class CreateWordView(CreateView):
     form_class = NewWordForm
     success_url = '/'
 
+    def form_valid(self, form):
+        word = form.save(commit=False)
+        word.author = self.request.user
+        return super(CreateWordView, self).form_valid(form)
+
 
 class UpdateWordView(UpdateView):
     pass
