@@ -13,7 +13,3 @@ class NewWordForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(NewWordForm, self).__init__(*args, **kwargs)
-        print("ARGS AND KWARGS")
-        print(args)
-        print(kwargs)
-
