@@ -7,4 +7,7 @@
         {% empty %}
             <p>Нет примеров использования</p>
     {% endfor %}
+    {% for value in img %}
+        <img src="{{ value.img.url }}">
+    {% endfor %}
 {% endblock %}

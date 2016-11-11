@@ -13,3 +13,7 @@ class NewWordForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(NewWordForm, self).__init__(*args, **kwargs)
+
+
+class ImageExampleForm(forms.Form):
+    img = forms.ImageField()

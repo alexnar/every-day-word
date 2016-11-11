@@ -35,3 +35,7 @@ class TodayWord(models.Model):
 
     def __str__(self):
         return self.today_word.word
+
+
+class ImageExampleModel(models.Model):
+    img = models.ImageField(upload_to='img')

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from dict.models import Dictionary, TodayWord, UseExample, NewWord
+from dict.models import Dictionary, TodayWord, UseExample, NewWord, ImageExampleModel
 
 
 def approve_words(modeladmin, request, word_set):
@@ -22,3 +22,4 @@ admin.site.register(NewWord, NewWordAdmin)
 admin.site.register(Dictionary, DictionaryAdmin)
 admin.site.register(TodayWord)
 admin.site.register(UseExample)
+admin.site.register(ImageExampleModel)
